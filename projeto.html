@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copiar PIX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .button:hover {
+      background-color: #45a049;
+    }
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Copiar PIX</h1>
+  <p>Clique no botão para copiar a chave PIX:</p>
+  <button class="button" onclick="copiarPix()">Copiar PIX</button>
+  <p id="confirmacao" style="color: green; font-weight: bold; margin-top: 20px;"></p>
+  
+  <!-- Substitua "sua-imagem.png" pelo nome do arquivo da imagem que você subir -->
+  <img src="sua-imagem.png" alt="QR Code do PIX">
+  
+  <script>
+    function copiarPix() {
+      const chavePix = "projetosocial@discipuloschurch.com.br"; // Chave PIX real
+      navigator.clipboard.writeText(chavePix).then(() => {
+        document.getElementById("confirmacao").innerText = "Chave PIX copiada com sucesso!";
+      });
+    }
+  </script>
+</body>
+</html>
